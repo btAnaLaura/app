@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title> Cadastro de Usuário </title>
+</head>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(function () {
+        $("#menu").load("menu.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+
+<body>
+    <div id="menu"></div>
+    <div id="formulario">
+        <form method="POST" action="cadastro.php">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Nome:</label><input class="form-control" type="text" name="nome" id="nome"><br>
+                </div>
+                <div class="col-md-3">
+                    <label>Whatsapp:</label><input type="text" class="form-control" name="whatsapp" id="whatsapp"><br>
+                </div>
+                <div class="col-md-3">
+                    <label>Email:</label><input type="text" class="form-control" name="email" id="email"><br>
+                </div>
+                <div class="col-md-3">
+                    <label>Telefone:</label><input type="text" class="form-control" name="telefone" id="telefone"><br>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="status">Status do cadastro:</label>
+                        <select name="status" id="status" value="status">
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                            <option value="Incompleto">Incompleto</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Adicionais:</label> <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea><br>
+                </div>
+                <div class="col-md-3">
+                    <input type="submit" class="btn btn-primary" value="Cadastrar" id="cadastrar" name="cadastrar">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+</body>
+
+</html>
+<style>
+    #formulario {
+        margin: 50px;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--bs-body-color);
+        background-color: var(--bs-form-control-bg);
+        background-clip: padding-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.375rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        border-color: rgb(243, 241, 241) !important;
+    }
+
+    label {
+        color: rgb(24, 19, 114);
+        font-size: 1.75rem;
+    }
+
+    select {
+        width: 250px;
+        height: 30px;
+        font-size: 17px;
+        background-color: var(--bs-form-control-bg);
+        padding-left: 75px;
+        border-color: rgb(228, 228, 228) !important;
+        border-radius: 0.375rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        background-clip: padding-box;
+
+    }
+
+    #observacao {
+        height: 150px;
+
+    }
+    #cadastrar{
+        margin-top: 148px;
+    }
+</style>
