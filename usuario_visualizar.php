@@ -9,7 +9,7 @@ if ($_GET['id']){
     if($result = mysqli_query($connect, $sql)){
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_array($result)){
-                echo "<table class='table table-bordered table-striped'>";
+                echo "<table class='table table-bordered table-striped' id='tabela' >";
                     echo "<thead>";
                         echo "<tr>";
                             echo "<th>Id</th>";
@@ -38,7 +38,7 @@ if ($_GET['id']){
                     echo "</tbody>";                            
                 echo "</table>";
                 
-                
+                echo "<div style='margin-left: 20px';> <a href='lista.html' class='btn btn-default'>Voltar</a></div>";
                 } 
             }else{
                     echo "<p class='lead'><em>Registros não encontrados.</em></p>";
@@ -56,3 +56,10 @@ if ($_GET['id']){
     
 
 ?>
+
+<style>
+     #tabela {
+        margin: 20px;
+        max-width: 1500px !important;
+    }
+</style>

@@ -66,80 +66,47 @@ require_once "dados.php";
                     </div>
                     <p>Preencha os campos com os dados novos </p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?=$_GET['id']?>" method="post">
-                   
-                        <div class="form-group">
-                            <label>Nome</label>
+                   <div class="row">
+                    <div class="col-md-3"> 
+                         <label>Nome</label>
                             <input type="text" name="<?=$a;?>_usuarios_nome" class="form-control" value="<?=$_u_usuarios_nome;?>" placeholder="Preencha seu nome"  required oninvalid="this.setCustomValidity('Campo nome obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
-                            
-                        </div>
-                      
-                        <div class="form-group">
-                            <label>Whatsapp</label>
+                      </div>
+                    <div class="col-md-3">
+                           <label>Whatsapp</label>
                             <input type="number" name="<?=$a;?>_usuarios_whatsapp" class="form-control" value="<?=$_u_usuarios_whatsapp;?>" placeholder="Preencha seu whatsapp"  required oninvalid="this.setCustomValidity('Campo whatsapp obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Telefone</label>
-                            <input type="number" name="<?=$a;?>_usuarios_telefone" class="form-control" value="<?=$_u_usuarios_telefone;?>" placeholder="Preencha seu telefone"  required oninvalid="this.setCustomValidity('Campo telefone obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
+                            </div>
+                    <div class="col-md-3">
+                    <label>Email</label>
                             <input type="text" name="<?=$a;?>_usuarios_email" class="form-control" value="<?=$_u_usuarios_email;?>" placeholder="Preencha seu Email"  required oninvalid="this.setCustomValidity('Campo email obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
-                        </div>
-                        <div class="form-group">
+                    </div>
+                  <div class="col-md-3">
+                    <label>Telefone</label>
+                            <input type="number" name="<?=$a;?>_usuarios_telefone" class="form-control" value="<?=$_u_usuarios_telefone;?>" placeholder="Preencha seu telefone"  required oninvalid="this.setCustomValidity('Campo telefone obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
+                    </div>
+                   </div>
+                     <div class="row">
+                     
+                        <div class="col-md-3">
+                               <div class="form-group">
                            <label   for="status">Status do cadastro:</label>
                             <select name="<?=$a;?>_usuarios_status" id="status" value="<?=$_u_usuarios_status;?>">
                             <option value="Ativo">Ativo</option>
                             <option value="Inativo">Inativo</option>
                             <option value="Incompleto">Incompleto</option>
                             </select>  
+                        </div> 
                         </div>
-                       
+                        <div class="col-md-6">
+                        <label>Adicionais:</label> <textarea class="form-control" name="<?=$a;?>_usuarios_observacao" value="<?=$_u_usuarios_observacao;?>" id="observacao" rows="3"></textarea><br>
+                        </div>
+                    
+                        </div>
                         <input type="submit" class="btn btn-primary" value="Salvar">
                         <a href="index.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        
         </div>
-    </div>
-    <div class="page-header">
-        <h2><?=$texto;?> Registro</h2>
-    </div>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id=<?=$_GET['id']?>" method="post">
-            <div class="row">
-                <div class="col-md-3">
-                    <label>Nome:</label> <input type="text" name="<?=$a;?>_usuarios_nome" class="form-control" value="<?=$_u_usuarios_nome;?>" placeholder="Preencha seu nome"  required oninvalid="this.setCustomValidity('Campo nome obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
-                </div>
-                <div class="col-md-3">
-                    <label>Whatsapp:</label><input type="number" name="<?=$a;?>_usuarios_whatsapp" class="form-control" value="<?=$_u_usuarios_whatsapp;?>" placeholder="Preencha seu whatsapp"  required oninvalid="this.setCustomValidity('Campo whatsapp obrigatório')" onchange="try{setCustomValidity('')}catch(e){}"><br>
-                </div>
-                <div class="col-md-3">
-                    <label>Email:</label><input type="text" class="form-control" name="email" id="email"><br>
-                </div>
-                <div class="col-md-3">
-                    <label>Telefone:</label><input type="text" class="form-control" name="telefone" id="telefone"><br>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label for="status">Status do cadastro:</label>
-                        <select name="status" id="status" value="status">
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
-                            <option value="Incompleto">Incompleto</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label>Adicionais:</label> <textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea><br>
-                </div>
-                <div class="col-md-3">
-                    <input type="submit" class="btn btn-primary" value="Cadastrar" id="cadastrar" name="cadastrar">
-                </div>
-            </div>
-        </form>
     </div>
 
     <div id="footer"></div>
